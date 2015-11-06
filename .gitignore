@@ -44,4 +44,5 @@ xcuserdata
 
 Carthage/Build
 
+fastlane/report.xml
 
