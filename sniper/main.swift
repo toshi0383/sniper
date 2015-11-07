@@ -13,7 +13,7 @@ let UnknownBundleID = "<unknown bundle ID>"
 CLI.setup(name:"sniper", version: "1.0", description:"OSX command line app to terminate other app like iphonesimulator")
 class Target: CommandType {
     let commandName = "target"
-    let commandShortDescription = "List all running apps' bundle ids."
+    let commandShortDescription = "List all running apps's info."
     let commandSignature = "[<keyword>]"
 
     func execute(arguments: CommandArguments) throws  {
@@ -41,13 +41,13 @@ class Target: CommandType {
 }
 class Shot: OptionCommandType {
     let commandName = "shot"
-    let commandShortDescription = "Terminate the running app(s). You need to pass the exact bundleID or PID."
+    let commandShortDescription = "Terminate the specified running app. You need to pass the exact bundleID or PID."
     let commandSignature = ""
 
     func setupOptions(options: Options) {
         options.onKeys(["-p", "--pid"]) { [unowned self] _, value in
             guard let pid = Int(value) else {
-                print("invalid pid")
+                print("invalid pid: \(value)")
                 return
             }
             let apps = NSWorkspace.sharedWorkspace().runningApplications
