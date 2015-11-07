@@ -84,14 +84,14 @@ class Shot: OptionCommandType {
                 Int($0.processIdentifier) == pid
             }
             guard !filtered.isEmpty else {
-                print("Couldn't find any processes with pid \"\(pid)\"\nexiting...")
+                print("No such process: \"\(pid)\"")
                 throw SniperError.TargetNotFound
             }
             filtered.forEach(self.terminate)
         } else if let bundleId = bundleId {
             let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleId)
             guard !apps.isEmpty else {
-                print("Couldn't find any processes named \"\(bundleId)\"\nexiting...")
+                print("No such process: \"\(bundleId)\"")
                 throw SniperError.TargetNotFound
             }
             apps.forEach(self.terminate)
