@@ -71,7 +71,7 @@ class Shot: OptionCommandType {
         app.terminate()
     }
     enum SniperError: ErrorType {
-        case InvalidArgument
+        case InvalidArgument, TargetNotFound
     }
     func execute(arguments: CommandArguments) throws  {
         if let _ = pid, _ = bundleId {
@@ -85,14 +85,14 @@ class Shot: OptionCommandType {
             }
             guard !filtered.isEmpty else {
                 print("Couldn't find any processes with pid \"\(pid)\"\nexiting...")
-                return
+                throw SniperError.TargetNotFound
             }
             filtered.forEach(self.terminate)
         } else if let bundleId = bundleId {
             let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleId)
             guard !apps.isEmpty else {
                 print("Couldn't find any processes named \"\(bundleId)\"\nexiting...")
-                return
+                throw SniperError.TargetNotFound
             }
             apps.forEach(self.terminate)
         }
