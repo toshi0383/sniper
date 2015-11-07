@@ -24,7 +24,8 @@
 		1F1FA62A1BECA57600A313FF /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA61B1BECA57600A313FF /* Input.swift */; };
 		1F1FA62B1BECA57600A313FF /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA61C1BECA57600A313FF /* Output.swift */; };
 		1F2056FA1BEE1D04007BAB48 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */; };
-		1F2056FC1BEE1D51007BAB48 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056FB1BEE1D51007BAB48 /* Command.swift */; };
+		1F2056FC1BEE1D51007BAB48 /* SniperCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */; };
+		1F2056FE1BEE2DD2007BAB48 /* AppKit+sniper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +59,8 @@
 		1F1FA61B1BECA57600A313FF /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		1F1FA61C1BECA57600A313FF /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
-		1F2056FB1BEE1D51007BAB48 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperCommands.swift; sourceTree = "<group>"; };
+		1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+sniper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				1F1FA6011BECA4BB00A313FF /* main.swift */,
-				1F2056FB1BEE1D51007BAB48 /* Command.swift */,
+				1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */,
+				1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */,
 				1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */,
 				1F1FA6081BECA57600A313FF /* SwiftCLI */,
 			);
@@ -221,10 +224,11 @@
 			files = (
 				1F1FA62A1BECA57600A313FF /* Input.swift in Sources */,
 				1F1FA6261BECA57600A313FF /* CommandMessageGenerator.swift in Sources */,
+				1F2056FE1BEE2DD2007BAB48 /* AppKit+sniper.swift in Sources */,
 				1F1FA6231BECA57600A313FF /* Router.swift in Sources */,
 				1F1FA6211BECA57600A313FF /* CommandSignature.swift in Sources */,
 				1F1FA61D1BECA57600A313FF /* CommandArguments.swift in Sources */,
-				1F2056FC1BEE1D51007BAB48 /* Command.swift in Sources */,
+				1F2056FC1BEE1D51007BAB48 /* SniperCommands.swift in Sources */,
 				1F1FA6291BECA57600A313FF /* VersionCommand.swift in Sources */,
 				1F1FA6281BECA57600A313FF /* HelpCommand.swift in Sources */,
 				1F1FA6251BECA57600A313FF /* Command.swift in Sources */,
