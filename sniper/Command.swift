@@ -34,7 +34,7 @@ class Target: CommandType {
         - SniperError.InvalidArgument: if specified keyword contains invalid regex
      - returns: target apps filtered by given keyword
     */
-    func getApps(keyword:String? = nil) throws -> [NSRunningApplication] {
+    private func getApps(keyword:String? = nil) throws -> [NSRunningApplication] {
         let apps = NSWorkspace.sharedWorkspace().runningApplications
         switch keyword {
         case .None:
@@ -76,7 +76,7 @@ class Shoot: OptionCommandType {
             self.bundleId = value
         }
     }
-    func terminate(app:NSRunningApplication) {
+    private func terminate(app:NSRunningApplication) {
         print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
         app.terminate()
     }
