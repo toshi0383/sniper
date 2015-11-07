@@ -22,11 +22,20 @@ class Target: CommandType {
 
     func execute(arguments: CommandArguments) throws  {
         let keyword = arguments.optionalArgument("keyword")
+        let apps = getApps(keyword)
+        print("\(apps.count) app\(apps.count == 1 ? "" : "s") found.")
+        for app in apps {
+            print("\(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier)")
+        }
+    }
+    func getApps(keyword:String? = nil) -> [NSRunningApplication] {
         let apps = NSWorkspace.sharedWorkspace().runningApplications
-        var filtered = [NSRunningApplication]()
-        if let keyword = keyword {
+        switch keyword {
+        case .None:
+            return apps
+        case .Some(let keyword):
             let regex = try! NSRegularExpression(pattern: "\(keyword)", options: .CaseInsensitive)
-            filtered = apps.filter{
+            return apps.filter{
                 guard let bundle = $0.bundleIdentifier else {
                     return false
                 }
@@ -34,12 +43,6 @@ class Target: CommandType {
                     options: NSMatchingOptions.WithTransparentBounds,
                     range: NSMakeRange(0, bundle.characters.count)).isEmpty
             }
-        } else {
-            filtered = apps
-        }
-        print("\(filtered.count) app\(filtered.count == 1 ? "" : "s") found.")
-        for app in filtered {
-            print("\(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier)")
         }
     }
 }
@@ -48,12 +51,34 @@ class Shot: OptionCommandType {
     let commandShortDescription = "Terminate the specified running app. You need to pass the exact bundleID or PID."
     let commandSignature = ""
 
+    var pid:Int?
+    var bundleId:String?
+
     func setupOptions(options: Options) {
         options.onKeys(["-p", "--pid"]) { [unowned self] _, value in
             guard let pid = Int(value) else {
                 print("invalid pid: \(value)")
                 return
             }
+            self.pid = pid
+        }
+        options.onKeys(["-b", "--bundle-id"]) { [unowned self] _, value in
+            self.bundleId = value
+        }
+    }
+    func terminate(app:NSRunningApplication) {
+        print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
+        app.terminate()
+    }
+    enum SniperError: ErrorType {
+        case InvalidArgument
+    }
+    func execute(arguments: CommandArguments) throws  {
+        if let _ = pid, _ = bundleId {
+            print("Cannot specify both bundleID(-b) and PID(-p) at the same time.")
+            throw SniperError.InvalidArgument
+        }
+        if let pid = pid {
             let apps = NSWorkspace.sharedWorkspace().runningApplications
             let filtered = apps.filter {
                 Int($0.processIdentifier) == pid
@@ -63,9 +88,7 @@ class Shot: OptionCommandType {
                 return
             }
             filtered.forEach(self.terminate)
-        }
-        options.onKeys(["-b", "--bundle-id"]) { [unowned self] _, value in
-            let bundleId = value
+        } else if let bundleId = bundleId {
             let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleId)
             guard !apps.isEmpty else {
                 print("Couldn't find any processes named \"\(bundleId)\"\nexiting...")
@@ -73,12 +96,6 @@ class Shot: OptionCommandType {
             }
             apps.forEach(self.terminate)
         }
-    }
-    func terminate(app:NSRunningApplication) {
-        print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
-        app.terminate()
-    }
-    func execute(arguments: CommandArguments) throws  {
     }
 }
 
