@@ -10,7 +10,11 @@ import AppKit
 
 let UnknownBundleID = "<unknown bundle ID>"
 
-CLI.setup(name:"sniper", version: "1.0", description:"OSX command line app to terminate other app like iphonesimulator")
+CLI.setup(
+           name: "sniper",
+        version: "1.0.1",
+    description: "the OSX app terminator"
+)
 class Target: CommandType {
     let commandName = "target"
     let commandShortDescription = "List all running apps's info."
