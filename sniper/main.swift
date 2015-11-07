@@ -12,7 +12,7 @@ let UnknownBundleID = "<unknown bundle ID>"
 
 CLI.setup(
            name: "sniper",
-        version: "1.0.1",
+        version: "0.1.1",
     description: "the OSX app terminator"
 )
 /**
