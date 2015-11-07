@@ -29,8 +29,10 @@ class Target: CommandType {
      get all target apps
      Result is filtered by given keyword
 
+     - parameter keyword: keyword string
      - throws:
         - SniperError.InvalidArgument: if specified keyword contains invalid regex
+     - returns: target apps filtered by given keyword
     */
     func getApps(keyword:String? = nil) throws -> [NSRunningApplication] {
         let apps = NSWorkspace.sharedWorkspace().runningApplications
