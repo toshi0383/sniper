@@ -15,6 +15,18 @@ CLI.setup(
         version: "1.0.1",
     description: "the OSX app terminator"
 )
+/**
+ attempt to execute throwable block
+
+ - seealso: [Implementing printing versions of “try?” and “try!” — on steroids! in #swiftlang](http://ericasadun.com/2015/11/05/implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang/)
+*/
+func attempt<T>(block: () throws -> T) -> Optional<T> {
+    do { return try block() }
+    catch { print(error); return nil }
+}
+enum SniperError: ErrorType {
+    case InvalidArgument, TargetNotFound
+}
 class Target: CommandType {
     let commandName = "target"
     let commandShortDescription = "List all running apps's info."
@@ -22,19 +34,23 @@ class Target: CommandType {
 
     func execute(arguments: CommandArguments) throws  {
         let keyword = arguments.optionalArgument("keyword")
-        let apps = getApps(keyword)
+        let apps = try getApps(keyword)
         print("\(apps.count) app\(apps.count == 1 ? "" : "s") found.")
         for app in apps {
             print("\(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier)")
         }
     }
-    func getApps(keyword:String? = nil) -> [NSRunningApplication] {
+    func getApps(keyword:String? = nil) throws -> [NSRunningApplication] {
         let apps = NSWorkspace.sharedWorkspace().runningApplications
         switch keyword {
         case .None:
             return apps
         case .Some(let keyword):
-            let regex = try! NSRegularExpression(pattern: "\(keyword)", options: .CaseInsensitive)
+            guard let regex = attempt({
+                try NSRegularExpression(pattern: "\(keyword)", options: .CaseInsensitive)
+            }) else {
+                throw SniperError.InvalidArgument
+            }
             return apps.filter{
                 guard let bundle = $0.bundleIdentifier else {
                     return false
@@ -70,9 +86,12 @@ class Shot: OptionCommandType {
         print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
         app.terminate()
     }
-    enum SniperError: ErrorType {
-        case InvalidArgument, TargetNotFound
-    }
+
+    /**
+     - throws:
+        - SniperError.InvalidArgument: if specified pid was invalid
+        - SniperError.TargetNotFound: if no process was found
+    */
     func execute(arguments: CommandArguments) throws  {
         if let _ = pid, _ = bundleId {
             print("Cannot specify both bundleID(-b) and PID(-p) at the same time.")
