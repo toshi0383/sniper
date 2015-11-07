@@ -40,6 +40,13 @@ class Target: CommandType {
             print("\(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier)")
         }
     }
+    /**
+     get all target apps
+     Result is filtered by given keyword
+
+     - throws:
+        - SniperError.InvalidArgument: if specified keyword contains invalid regex
+    */
     func getApps(keyword:String? = nil) throws -> [NSRunningApplication] {
         let apps = NSWorkspace.sharedWorkspace().runningApplications
         switch keyword {
