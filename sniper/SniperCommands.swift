@@ -10,7 +10,7 @@ import AppKit
 let UnknownBundleID = "<unknown bundle ID>"
 
 enum SniperError: ErrorType {
-    case InvalidArgument, TargetNotFound
+    case InvalidArgument, TargetNotFound, UnknownError
 }
 
 class Target: CommandType {
@@ -34,6 +34,10 @@ class Target: CommandType {
             print("\(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier)")
         }
     }
+}
+
+/// private
+extension Target {
 
     /**
      get all target apps
@@ -66,6 +70,7 @@ class Target: CommandType {
         }
     }
 }
+
 
 class Shoot {
 
@@ -102,43 +107,63 @@ extension Shoot: OptionCommandType {
         }
     }
 
-    private func terminate(app:NSRunningApplication) {
-        print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
-        app.terminate()
-    }
-
     /**
      - throws:
         - SniperError.InvalidArgument: if specified pid was invalid
         - SniperError.TargetNotFound: if no process was found
     */
-    func execute(arguments: CommandArguments) throws  {
-        if let _ = pid, _ = bundleId {
+    func execute(arguments: CommandArguments) throws {
+        switch (pid, bundleId) {
+        case (_?, _?):
             print("Cannot specify both bundleID(-b) and PID(-p) at the same time.")
             throw SniperError.InvalidArgument
-        }
 
-        if let pid = pid {
+        case let (nil, bundleId?):
+            do {
 
-            let apps = NSWorkspace.sharedWorkspace().runningApplications
-            let filtered = apps.filter {
-                Int($0.processIdentifier) == pid
-            }
-            guard !filtered.isEmpty else {
-                print("No such process: \"\(pid)\"")
-                throw SniperError.TargetNotFound
-            }
-            filtered.forEach(self.terminate)
+                try terminateApps(
+                    NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleId)
+                )
 
-        } else if let bundleId = bundleId {
-
-            let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleId)
-            guard !apps.isEmpty else {
+            } catch SniperError.TargetNotFound {
                 print("No such process: \"\(bundleId)\"")
                 throw SniperError.TargetNotFound
+
             }
-            apps.forEach(self.terminate)
+
+        case let (pid?, nil):
+            do {
+
+                try terminateApps(
+                    NSRunningApplication.runningApplicationsWithProcessIdentifier(pid)
+                )
+
+            } catch SniperError.TargetNotFound {
+                print("No such process: \"\(pid)\"")
+                throw SniperError.TargetNotFound
+
+            }
+
+        case (nil, nil):
+            print("No target specified.")
+            throw SniperError.InvalidArgument
 
         }
+    }
+}
+
+/// private
+extension Shoot {
+    private func terminate(app:NSRunningApplication) {
+        print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
+        app.terminate()
+    }
+
+    private func terminateApps(@autoclosure getTargetBlock:()->[NSRunningApplication]) throws {
+        let apps = getTargetBlock()
+        guard !apps.isEmpty else {
+            throw SniperError.TargetNotFound
+        }
+        apps.forEach(self.terminate)
     }
 }
