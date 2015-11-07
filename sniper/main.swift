@@ -12,7 +12,7 @@ let UnknownBundleID = "<unknown bundle ID>"
 
 CLI.setup(
            name: "sniper",
-        version: "0.1.1",
+        version: "0.2.0",
     description: "the OSX app terminator"
 )
 /**
@@ -69,8 +69,8 @@ class Target: CommandType {
         }
     }
 }
-class Shot: OptionCommandType {
-    let commandName = "shot"
+class Shoot: OptionCommandType {
+    let commandName = "shoot"
     let commandShortDescription = "Terminate the specified running app. You need to pass the exact bundleID or PID."
     let commandSignature = ""
 
@@ -126,7 +126,7 @@ class Shot: OptionCommandType {
 }
 
 CLI.registerCommand(Target())
-CLI.registerCommand(Shot())
+CLI.registerCommand(Shoot())
 let result = CLI.go()
 exit(result)
 
