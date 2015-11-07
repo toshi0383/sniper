@@ -20,11 +20,11 @@ $ sniper target  firefox
 org.mozilla.firefox: 4822
 
 # Terminate process by bundle ID
-$ ./sniper shot -b org.mozilla.firefox
+$ ./sniper shoot -b org.mozilla.firefox
 Terminating org.mozilla.firefox: 4822 ...
 
 # Terminate process by PID
-$ sniper shot -p 4703
+$ sniper shoot -p 4703
 Terminating com.apple.iphonesimulator: 4703 ...
 ```
 
@@ -37,7 +37,7 @@ Clone this repo and copy `./bin/sniper` to your $PATH .
 Reset all simulators in your CI process.
 
 ```
-$ sniper shot -b com.apple.iphonesimulator  # shutdown before reset(remove) all simulators
+$ sniper shoot -b com.apple.iphonesimulator  # shutdown before reset(remove) all simulators
 terminating com.apple.iphonesimulator ...
 $ rm -rf ~/Library/Developer/CoreSimulator/Devices/*
 ```
