@@ -1,5 +1,5 @@
 [![Build Status](https://www.bitrise.io/app/3039e5ad5401b34b.svg?token=IiYxTu5sGPTcbFKtyLpazA&branch=master)](https://www.bitrise.io/app/3039e5ad5401b34b)
-[![](http://img.shields.io/badge/Swift-2.1-orange.svg)]()
+[![](http://img.shields.io/badge/Swift-2.2-orange.svg)]()
 
 # sniper
 OSX command line tool to manage other mac app like iPhoneSimulator
