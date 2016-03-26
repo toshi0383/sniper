@@ -78,6 +78,8 @@ class Shoot {
 
     var bundleId:String?
 
+    var force = false
+
 }
 
 extension Shoot: OptionCommandType {
@@ -102,8 +104,13 @@ extension Shoot: OptionCommandType {
             }
             self.pid = pid
         }
+
         options.onKeys(["-b", "--bundle-id"]) { [unowned self] _, value in
             self.bundleId = value
+        }
+
+        options.onFlags(["-f", "--force"]) { [unowned self] _ in
+            self.force = true
         }
     }
 
@@ -156,7 +163,11 @@ extension Shoot: OptionCommandType {
 extension Shoot {
     private func terminate(app:NSRunningApplication) {
         print("Terminating \(app.bundleIdentifier ?? UnknownBundleID): \(app.processIdentifier) ...")
-        app.terminate()
+        if force {
+            app.forceTerminate()
+        } else {
+            app.terminate()
+        }
     }
 
     private func terminateApps(@autoclosure getTargetBlock:()->[NSRunningApplication]) throws {
