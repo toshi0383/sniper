@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0C48731CA62F960068F592 /* ChainableCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C484F1CA62F960068F592 /* ChainableCommand.swift */; };
+		1F0C48741CA62F960068F592 /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48501CA62F960068F592 /* CLI.swift */; };
+		1F0C48751CA62F960068F592 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48511CA62F960068F592 /* Command.swift */; };
+		1F0C48761CA62F960068F592 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48521CA62F960068F592 /* CommandArguments.swift */; };
+		1F0C48771CA62F960068F592 /* CommandMessageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48531CA62F960068F592 /* CommandMessageGenerator.swift */; };
+		1F0C48781CA62F960068F592 /* CommandSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48541CA62F960068F592 /* CommandSignature.swift */; };
+		1F0C48791CA62F960068F592 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48551CA62F960068F592 /* Extensions.swift */; };
+		1F0C487A1CA62F960068F592 /* HelpCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48561CA62F960068F592 /* HelpCommand.swift */; };
+		1F0C487B1CA62F960068F592 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48571CA62F960068F592 /* Input.swift */; };
+		1F0C487C1CA62F960068F592 /* LightweightCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48581CA62F960068F592 /* LightweightCommand.swift */; };
+		1F0C487D1CA62F960068F592 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C48591CA62F960068F592 /* Options.swift */; };
+		1F0C487E1CA62F960068F592 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C485A1CA62F960068F592 /* Output.swift */; };
+		1F0C487F1CA62F960068F592 /* RawArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C485B1CA62F960068F592 /* RawArguments.swift */; };
+		1F0C48801CA62F960068F592 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C485C1CA62F960068F592 /* Router.swift */; };
+		1F0C48811CA62F960068F592 /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C485D1CA62F960068F592 /* VersionCommand.swift */; };
 		1F1FA6021BECA4BB00A313FF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6011BECA4BB00A313FF /* main.swift */; };
-		1F1FA61D1BECA57600A313FF /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA60A1BECA57600A313FF /* CommandArguments.swift */; };
-		1F1FA61E1BECA57600A313FF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA60B1BECA57600A313FF /* Options.swift */; };
-		1F1FA61F1BECA57600A313FF /* RawArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA60C1BECA57600A313FF /* RawArguments.swift */; };
-		1F1FA6201BECA57600A313FF /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA60E1BECA57600A313FF /* CLI.swift */; };
-		1F1FA6211BECA57600A313FF /* CommandSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA60F1BECA57600A313FF /* CommandSignature.swift */; };
-		1F1FA6221BECA57600A313FF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6101BECA57600A313FF /* Extensions.swift */; };
-		1F1FA6231BECA57600A313FF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6111BECA57600A313FF /* Router.swift */; };
-		1F1FA6241BECA57600A313FF /* ChainableCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6131BECA57600A313FF /* ChainableCommand.swift */; };
-		1F1FA6251BECA57600A313FF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6141BECA57600A313FF /* Command.swift */; };
-		1F1FA6261BECA57600A313FF /* CommandMessageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6151BECA57600A313FF /* CommandMessageGenerator.swift */; };
-		1F1FA6271BECA57600A313FF /* LightweightCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6161BECA57600A313FF /* LightweightCommand.swift */; };
-		1F1FA6281BECA57600A313FF /* HelpCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6181BECA57600A313FF /* HelpCommand.swift */; };
-		1F1FA6291BECA57600A313FF /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA6191BECA57600A313FF /* VersionCommand.swift */; };
-		1F1FA62A1BECA57600A313FF /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA61B1BECA57600A313FF /* Input.swift */; };
-		1F1FA62B1BECA57600A313FF /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1FA61C1BECA57600A313FF /* Output.swift */; };
 		1F2056FA1BEE1D04007BAB48 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */; };
 		1F2056FC1BEE1D51007BAB48 /* SniperCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */; };
 		1F2056FE1BEE2DD2007BAB48 /* AppKit+sniper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */; };
@@ -41,23 +41,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F0C484C1CA62F960068F592 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		1F0C484F1CA62F960068F592 /* ChainableCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainableCommand.swift; sourceTree = "<group>"; };
+		1F0C48501CA62F960068F592 /* CLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLI.swift; sourceTree = "<group>"; };
+		1F0C48511CA62F960068F592 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		1F0C48521CA62F960068F592 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandArguments.swift; sourceTree = "<group>"; };
+		1F0C48531CA62F960068F592 /* CommandMessageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandMessageGenerator.swift; sourceTree = "<group>"; };
+		1F0C48541CA62F960068F592 /* CommandSignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandSignature.swift; sourceTree = "<group>"; };
+		1F0C48551CA62F960068F592 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1F0C48561CA62F960068F592 /* HelpCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCommand.swift; sourceTree = "<group>"; };
+		1F0C48571CA62F960068F592 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		1F0C48581CA62F960068F592 /* LightweightCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightweightCommand.swift; sourceTree = "<group>"; };
+		1F0C48591CA62F960068F592 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		1F0C485A1CA62F960068F592 /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		1F0C485B1CA62F960068F592 /* RawArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawArguments.swift; sourceTree = "<group>"; };
+		1F0C485C1CA62F960068F592 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1F0C485D1CA62F960068F592 /* VersionCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionCommand.swift; sourceTree = "<group>"; };
 		1F1FA5FE1BECA4BB00A313FF /* sniper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sniper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1FA6011BECA4BB00A313FF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		1F1FA60A1BECA57600A313FF /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandArguments.swift; sourceTree = "<group>"; };
-		1F1FA60B1BECA57600A313FF /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		1F1FA60C1BECA57600A313FF /* RawArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawArguments.swift; sourceTree = "<group>"; };
-		1F1FA60E1BECA57600A313FF /* CLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLI.swift; sourceTree = "<group>"; };
-		1F1FA60F1BECA57600A313FF /* CommandSignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandSignature.swift; sourceTree = "<group>"; };
-		1F1FA6101BECA57600A313FF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1F1FA6111BECA57600A313FF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1F1FA6131BECA57600A313FF /* ChainableCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainableCommand.swift; sourceTree = "<group>"; };
-		1F1FA6141BECA57600A313FF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		1F1FA6151BECA57600A313FF /* CommandMessageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandMessageGenerator.swift; sourceTree = "<group>"; };
-		1F1FA6161BECA57600A313FF /* LightweightCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightweightCommand.swift; sourceTree = "<group>"; };
-		1F1FA6181BECA57600A313FF /* HelpCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCommand.swift; sourceTree = "<group>"; };
-		1F1FA6191BECA57600A313FF /* VersionCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionCommand.swift; sourceTree = "<group>"; };
-		1F1FA61B1BECA57600A313FF /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
-		1F1FA61C1BECA57600A313FF /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperCommands.swift; sourceTree = "<group>"; };
 		1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+sniper.swift"; sourceTree = "<group>"; };
@@ -74,10 +75,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0C48481CA62F960068F592 /* SwiftCLI */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C484C1CA62F960068F592 /* Package.swift */,
+				1F0C484E1CA62F960068F592 /* Sources */,
+			);
+			path = SwiftCLI;
+			sourceTree = "<group>";
+		};
+		1F0C484E1CA62F960068F592 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C484F1CA62F960068F592 /* ChainableCommand.swift */,
+				1F0C48501CA62F960068F592 /* CLI.swift */,
+				1F0C48511CA62F960068F592 /* Command.swift */,
+				1F0C48521CA62F960068F592 /* CommandArguments.swift */,
+				1F0C48531CA62F960068F592 /* CommandMessageGenerator.swift */,
+				1F0C48541CA62F960068F592 /* CommandSignature.swift */,
+				1F0C48551CA62F960068F592 /* Extensions.swift */,
+				1F0C48561CA62F960068F592 /* HelpCommand.swift */,
+				1F0C48571CA62F960068F592 /* Input.swift */,
+				1F0C48581CA62F960068F592 /* LightweightCommand.swift */,
+				1F0C48591CA62F960068F592 /* Options.swift */,
+				1F0C485A1CA62F960068F592 /* Output.swift */,
+				1F0C485B1CA62F960068F592 /* RawArguments.swift */,
+				1F0C485C1CA62F960068F592 /* Router.swift */,
+				1F0C485D1CA62F960068F592 /* VersionCommand.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		1F1FA5F51BECA4BB00A313FF = {
 			isa = PBXGroup;
 			children = (
 				1F1FA6001BECA4BB00A313FF /* sniper */,
+				1F0C48481CA62F960068F592 /* SwiftCLI */,
 				1F1FA5FF1BECA4BB00A313FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,72 +130,8 @@
 				1F2056FB1BEE1D51007BAB48 /* SniperCommands.swift */,
 				1F2056FD1BEE2DD2007BAB48 /* AppKit+sniper.swift */,
 				1F2056F91BEE1D04007BAB48 /* SwiftExtensions.swift */,
-				1F1FA6081BECA57600A313FF /* SwiftCLI */,
 			);
 			path = sniper;
-			sourceTree = "<group>";
-		};
-		1F1FA6081BECA57600A313FF /* SwiftCLI */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA6091BECA57600A313FF /* Arguments */,
-				1F1FA60D1BECA57600A313FF /* CLI */,
-				1F1FA6121BECA57600A313FF /* Commands */,
-				1F1FA61A1BECA57600A313FF /* IO */,
-			);
-			name = SwiftCLI;
-			path = SwiftCLI/SwiftCLI;
-			sourceTree = SOURCE_ROOT;
-		};
-		1F1FA6091BECA57600A313FF /* Arguments */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA60A1BECA57600A313FF /* CommandArguments.swift */,
-				1F1FA60B1BECA57600A313FF /* Options.swift */,
-				1F1FA60C1BECA57600A313FF /* RawArguments.swift */,
-			);
-			path = Arguments;
-			sourceTree = "<group>";
-		};
-		1F1FA60D1BECA57600A313FF /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA60E1BECA57600A313FF /* CLI.swift */,
-				1F1FA60F1BECA57600A313FF /* CommandSignature.swift */,
-				1F1FA6101BECA57600A313FF /* Extensions.swift */,
-				1F1FA6111BECA57600A313FF /* Router.swift */,
-			);
-			path = CLI;
-			sourceTree = "<group>";
-		};
-		1F1FA6121BECA57600A313FF /* Commands */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA6131BECA57600A313FF /* ChainableCommand.swift */,
-				1F1FA6141BECA57600A313FF /* Command.swift */,
-				1F1FA6151BECA57600A313FF /* CommandMessageGenerator.swift */,
-				1F1FA6161BECA57600A313FF /* LightweightCommand.swift */,
-				1F1FA6171BECA57600A313FF /* Special */,
-			);
-			path = Commands;
-			sourceTree = "<group>";
-		};
-		1F1FA6171BECA57600A313FF /* Special */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA6181BECA57600A313FF /* HelpCommand.swift */,
-				1F1FA6191BECA57600A313FF /* VersionCommand.swift */,
-			);
-			path = Special;
-			sourceTree = "<group>";
-		};
-		1F1FA61A1BECA57600A313FF /* IO */ = {
-			isa = PBXGroup;
-			children = (
-				1F1FA61B1BECA57600A313FF /* Input.swift */,
-				1F1FA61C1BECA57600A313FF /* Output.swift */,
-			);
-			path = IO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,25 +191,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1FA62A1BECA57600A313FF /* Input.swift in Sources */,
-				1F1FA6261BECA57600A313FF /* CommandMessageGenerator.swift in Sources */,
 				1F2056FE1BEE2DD2007BAB48 /* AppKit+sniper.swift in Sources */,
-				1F1FA6231BECA57600A313FF /* Router.swift in Sources */,
-				1F1FA6211BECA57600A313FF /* CommandSignature.swift in Sources */,
-				1F1FA61D1BECA57600A313FF /* CommandArguments.swift in Sources */,
+				1F0C487E1CA62F960068F592 /* Output.swift in Sources */,
 				1F2056FC1BEE1D51007BAB48 /* SniperCommands.swift in Sources */,
-				1F1FA6291BECA57600A313FF /* VersionCommand.swift in Sources */,
-				1F1FA6281BECA57600A313FF /* HelpCommand.swift in Sources */,
-				1F1FA6251BECA57600A313FF /* Command.swift in Sources */,
-				1F1FA62B1BECA57600A313FF /* Output.swift in Sources */,
-				1F1FA61F1BECA57600A313FF /* RawArguments.swift in Sources */,
-				1F1FA6271BECA57600A313FF /* LightweightCommand.swift in Sources */,
-				1F1FA6201BECA57600A313FF /* CLI.swift in Sources */,
-				1F1FA61E1BECA57600A313FF /* Options.swift in Sources */,
-				1F1FA6241BECA57600A313FF /* ChainableCommand.swift in Sources */,
+				1F0C48781CA62F960068F592 /* CommandSignature.swift in Sources */,
+				1F0C487D1CA62F960068F592 /* Options.swift in Sources */,
+				1F0C48751CA62F960068F592 /* Command.swift in Sources */,
+				1F0C48811CA62F960068F592 /* VersionCommand.swift in Sources */,
+				1F0C487B1CA62F960068F592 /* Input.swift in Sources */,
 				1F2056FA1BEE1D04007BAB48 /* SwiftExtensions.swift in Sources */,
+				1F0C48801CA62F960068F592 /* Router.swift in Sources */,
+				1F0C48741CA62F960068F592 /* CLI.swift in Sources */,
+				1F0C48771CA62F960068F592 /* CommandMessageGenerator.swift in Sources */,
+				1F0C487A1CA62F960068F592 /* HelpCommand.swift in Sources */,
+				1F0C487F1CA62F960068F592 /* RawArguments.swift in Sources */,
+				1F0C48761CA62F960068F592 /* CommandArguments.swift in Sources */,
 				1F1FA6021BECA4BB00A313FF /* main.swift in Sources */,
-				1F1FA6221BECA57600A313FF /* Extensions.swift in Sources */,
+				1F0C48731CA62F960068F592 /* ChainableCommand.swift in Sources */,
+				1F0C487C1CA62F960068F592 /* LightweightCommand.swift in Sources */,
+				1F0C48791CA62F960068F592 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
