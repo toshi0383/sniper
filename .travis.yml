@@ -1,0 +1,12 @@
+os:
+- osx
+language: generic
+sudo: required
+dist: trusty
+osx_image: xcode7.3
+notifications:
+  slack: toshi0383:rQxydx8brjMrnkFQRgQHcJ2V
+install:
+script:
+- ./script/test.sh
+- exit $?
